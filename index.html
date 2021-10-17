@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Ex Cat</title>
+	<script src="https://unpkg.com/vue@next"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<form>
-	  <label for="expenseInput">Select expenses:</label>
-	  <input type="file" id="expenseInput" name="expenses">
-	  <label for="categories">Select expenses:</label>
-	  <input type="file" id="categories" name="categories">
-	  <input type="button" value="Submit" id="submitBtn">
+	<form class="glassmorph" id="csvSelector1">
+		<label for="expenseInput">Select expenses:</label>
+		<input
+			type="file"
+			id="expenseInput"
+			@change="loadCSV"
+			multiple
+		>
+		<br>			
+  		<input
+  			type="button"
+  			value="Submit"
+  			id="submitBtn"
+  			@click="parseCSV"
+  		>
 	</form>
+
+	<div class="glassmorph" id="expenseTable">
+		<h2>Expenses:</h2>
+		<table>
+		  <tr v-if="visible">
+		    <th>Type</th>
+		    <th>Amount</th>
+		    <th>Date</th>
+		    <th>Details</th>
+		    <th>Category</th>
+		    <th>Sub-Category</th>
+		  </tr>
+		  <tr v-for="item in items">
+		    <td>{{item.type}}</td>
+		    <td>{{item.amount}}</td>
+		    <td>{{item.transactionDate}}</td>
+		    <td>{{item.details}}</td>
+		    <td>{{item.category}}</td>
+		    <td>{{item.subCategory}}</td>
+		  </tr>
+		</table>
+	</div>
+
 
 	<script type="text/javascript" src="script.js"></script>
 

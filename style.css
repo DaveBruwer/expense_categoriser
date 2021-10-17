@@ -1,0 +1,25 @@
+html {
+	background: rgb(127,156,186);
+	background: radial-gradient(circle, rgba(127,156,186,1) 0%, rgba(202,223,245,1) 100%);
+}
+
+.glassmorph {
+	background: rgba( 255, 255, 255, 0.10 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 1.5px );
+	-webkit-backdrop-filter: blur( 1.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#csvSelector1 #expenseTable {
+	padding: 5px;
+	margin: 5px;
+}
+
+table, th, td {
+  /*border: 1px solid black;*/
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-collapse: collapse;
+}
+
